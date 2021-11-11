@@ -1,7 +1,9 @@
-package com.example.tony.Algorithm;
+package com.example.tony.Level2;
 
 
+import java.util.LinkedList;
 import java.util.*;
+
 
 class Graph {
     class Node {
@@ -36,7 +38,6 @@ class Graph {
         }
     }
 
-    // DFS
     void dfs() {
         dfs(0); // 인자 없으면 시작 노드부터
     }
@@ -59,30 +60,9 @@ class Graph {
         }
     }
 
-    // DFS : Recursive
-    void dfsR(Node r){
-        if(r == null) return;
-        r.marked = true;
-        visit(r);
-        for(Node n : r.adjacent){
-            if(n.marked == false){
-                dfsR(n);
-            }
-        }
+    void bfs(){
+        bfs(0); // 인자 없으면 시작 노드부터
     }
-
-    // DFS : Recursive : array
-    void dfsR(int index){
-        Node r = nodes[index];
-        dfsR(r);
-
-    }
-
-    void dfsR(){
-        dfsR(0);
-    }
-
-
 
     // BFS : Queue
     void bfs(int index){
@@ -103,65 +83,22 @@ class Graph {
         }
 
     }
-    void bfs(){
-        bfs(0); // 인자 없으면 시작 노드부터
-    }
-
 
     void visit(Node n){ // 출력함수
         System.out.print(n.data + " ");
     }
 
 
-
-
 }
+public class TargetNumber {
 
-public class GraphTest {
 
-    public static void main(String[] args) {
-        Graph g = new Graph(9);
-        g.addEdge(0,1);
-        g.addEdge(1,2);
-        g.addEdge(1,3);
-        g.addEdge(2,4);
-        g.addEdge(3,4);
-        g.addEdge(3,5);
-        g.addEdge(5,6);
-        g.addEdge(5,7);
-        g.addEdge(6,8);
-        Graph g2 = new Graph(9);
-        g2.addEdge(0,1);
-        g2.addEdge(1,2);
-        g2.addEdge(1,3);
-        g2.addEdge(2,4);
-        g2.addEdge(3,4);
-        g2.addEdge(3,5);
-        g2.addEdge(5,6);
-        g2.addEdge(5,7);
-        g2.addEdge(6,8);
-
-        Graph g3 = new Graph(9);
-        g3.addEdge(0,1);
-        g3.addEdge(1,2);
-        g3.addEdge(1,3);
-        g3.addEdge(2,4);
-        g3.addEdge(3,4);
-        g3.addEdge(3,5);
-        g3.addEdge(5,6);
-        g3.addEdge(5,7);
-        g3.addEdge(6,8);
-
-        System.out.println("----DFS----");
-        g.dfs();
-        System.out.println();
-        System.out.println("----DFS:R----");
-        g3.dfsR();
-        System.out.println();
-        System.out.println("----BFS----");
-        g2.bfs();
-        System.out.println();
-
+    public int solution(int[] numbers, int target) {
+        int answer = 0;
+        return answer;
     }
 
+    public static void main(String[] args) {
+
+    }
 }
