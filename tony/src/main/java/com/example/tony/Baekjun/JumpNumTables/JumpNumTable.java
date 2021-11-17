@@ -1,6 +1,4 @@
-package com.example.tony.Baekjun;
-
-import com.example.tony.Level2.TargetNumber.TargetNumber;
+package com.example.tony.Baekjun.JumpNumTables;
 
 import java.util.ArrayList;
 import java.util.List;
