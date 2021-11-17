@@ -1,4 +1,4 @@
-package com.example.tony.Level2;
+package com.example.tony.Level2.TargetNumber;
 
 public class TargetNumber2 {
 

@@ -1,7 +1,5 @@
-package com.example.tony.Level2;
+package com.example.tony.Level2.TargetNumber;
 
-
-import java.util.LinkedList;
 
 /*
 class Graph {
