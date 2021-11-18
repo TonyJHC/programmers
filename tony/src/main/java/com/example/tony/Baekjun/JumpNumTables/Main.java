@@ -13,7 +13,7 @@ public class Main {
 
     public static void dfs(int[][] numbers, int r, int c, String str) {
         tmpStr = str;
-        
+
         if (tmpStr.length() == 6) { // 길이가 6이고
             if (!numsList.contains(tmpStr)) { // 서로 다른 수
                 numsList.add(tmpStr); // 추가
