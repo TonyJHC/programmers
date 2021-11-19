@@ -12,26 +12,25 @@ public class Main {
     static int[] tmpnums;
     static int depth = 0;
 
-    public static void dfs(int[] nums) { // depth(M개 고르기) 초기값 0 : M 과 같아질때까지
+    public static void dfs(int[] nums,int start,int depth) { // depth(M개 고르기) 초기값 0 : M 과 같아질때까지
         if (depth == M) {
 
-            if (!numSet.contains(tmpnums)) {
-                numSet.add(tmpnums);
-            }
+            for(int i : tmpnums)
+                System.out.print(i+" ");
 
-            depth -=1;
+            System.out.println();
+
             return;
         }
-        for (int k = 0; k < N; k++) {
-            tmpnums[depth] = nums[k];
-            for (int i = 0; i < N; i++) {
-                if (!visited[i]) {
-                    tmpnums[depth++] = nums[i];
-                    visited[i] = true;
-                    dfs(nums);
-                    visited[i] = false;
-                }
+        for (int i =start ; i < N; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
+                tmpnums[depth] = nums[i];
+                dfs(nums,i+1,depth+1);
+                visited[i] = false;
+
             }
+
         }
 
 
@@ -40,11 +39,13 @@ public class Main {
     public static void main(String[] args) {
         N = 4; // 4개 자연수 중
         M = 2; // 2개 골라서 수열 만들기
+        // N = 3;
+        // M = 1;
 
         tmpnums = new int[M]; // 수열을 만드는데 사용되는 배열
 
         int[] nums = {9, 8, 7, 1}; // 4개 자연수
-
+        // int[] nums = {4,5,2};
         visited = new boolean[N]; // 초기값 false
 
         // 오름차순 정렬
@@ -62,21 +63,9 @@ public class Main {
             System.out.print(i + " "); // 1 7 8 9 로 정렬
         }
         System.out.println();
-//        depth = 0;
-        dfs(nums);
 
-//        int[] n1 = {1, 7};
-//        int[] n2 = {1, 8};
+        dfs(nums, 0, depth);
 
-//        numSet.add(n1);
-//        numSet.add(n2);
-
-        for (int[] i : numSet) {
-            for (int j : i) {
-                System.out.print(j + " ");
-            }
-            System.out.println();
-        }
     }
 
 }
